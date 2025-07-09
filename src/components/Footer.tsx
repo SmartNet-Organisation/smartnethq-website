@@ -99,8 +99,8 @@ const Footer = () => {
                   <a href="https://wa.me/2349061464393" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     +234 906 146 4393
                   </a>
-                  <a href="https://wa.me/2349026716996" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                    +234 902 671 6996
+                  <a href="https://wa.me/2348113251635" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    +234 811 325 1635
                   </a>
                 </div>
               </li>
