@@ -1,7 +1,7 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Globe } from 'lucide-react';
 
-// Import all project images
+// Import all project images with correct paths
 import mtnImage from '../assets/mtn-s copy.png';
 import brandDosageImage from '../assets/bra copy.png';
 import hrHubImage from '../assets/hrhub copy.png';
@@ -73,16 +73,36 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
               {/* Project Image */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-64 overflow-hidden bg-gray-100">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                
+                {/* Fallback content */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center" style={{ display: 'none' }}>
+                  <div className="text-center">
+                    <Globe className="w-12 h-12 text-blue-600 mx-auto mb-2" />
+                    <p className="text-sm font-medium text-gray-700">{project.title}</p>
+                  </div>
+                </div>
               </div>
 
               {/* Project Content */}
               <div className="p-6">
+                <h3 className="font-semibold text-gray-900 mb-4 text-sm leading-tight">
+                  {project.title}
+                </h3>
+                
                 {/* Action Button */}
                 <a
                   href={project.url}
