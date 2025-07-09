@@ -1,7 +1,60 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 
+// Import all project images
+import mtnImage from '../assets/mtn-s copy.png';
+import brandDosageImage from '../assets/bra copy.png';
+import hrHubImage from '../assets/hrhub copy.png';
+import earlImage from '../assets/earl copy.png';
+import finAiImage from '../assets/fin ai.png';
+import fitnessImage from '../assets/fitness.png';
+import laundryImage from '../assets/laundry.png';
+import emedImage from '../assets/emed.png';
+
 const Projects = () => {
+  const projects = [
+    {
+      title: "MNTN Hub - Mountain Hiking Guide",
+      image: mtnImage,
+      url: "https://mntn-hub.netlify.app/"
+    },
+    {
+      title: "BrandDosage - Experiential Marketing",
+      image: brandDosageImage,
+      url: "https://brand-dosage.netlify.app/"
+    },
+    {
+      title: "HR Hub - Workforce Management Platform",
+      image: hrHubImage,
+      url: "https://hrhubconnect.netlify.app/"
+    },
+    {
+      title: "Earl - Professional Networking Platform",
+      image: earlImage,
+      url: "https://ear1-tech.netlify.app/"
+    },
+    {
+      title: "FinAI - AI-Powered Trading Platform",
+      image: finAiImage,
+      url: "https://finai-react.vercel.app/"
+    },
+    {
+      title: "Apex Fitness - Fitness Club Platform",
+      image: fitnessImage,
+      url: "https://fitnes-company.onrender.com/"
+    },
+    {
+      title: "Jemap Laundry - Laundry Service Platform",
+      image: laundryImage,
+      url: "https://jemap-laundry.onrender.com/"
+    },
+    {
+      title: "Emed - Telehealth Platform",
+      image: emedImage,
+      url: "https://emedatt-telehealth.vercel.app/"
+    }
+  ];
+
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,224 +69,34 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* MNTN Hub Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/mtn-s copy.png"
-                alt="MNTN Hub - Mountain Hiking Guide"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://mntn-hub.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-          </div>
-
-          {/* BrandDosage Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/bra copy.png"
-                alt="BrandDosage - Experiential Marketing"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://brand-dosage.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-          </div>
-
-          {/* HR Hub Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/hrhub copy.png"
-                alt="HR Hub - Workforce Management Platform"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://hrhubconnect.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Earl Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/earl copy.png"
-                alt="Earl - Professional Networking Platform"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://ear1-tech.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Second row of projects */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* FinAI Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/fin ai.png"
-                alt="FinAI - AI-Powered Trading Platform"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+          {projects.map((project, index) => (
+            <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+              {/* Project Image */}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Project Content */}
+              <div className="p-6">
+                {/* Action Button */}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>View Project</span>
+                </a>
+              </div>
             </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://finai-react.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Apex Fitness Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/fitness.png"
-                alt="Apex Fitness - Fitness Club Platform"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://fitnes-company.onrender.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Jemap Laundry Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/laundry.png"
-                alt="Jemap Laundry - Laundry Service Platform"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://jemap-laundry.onrender.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-
-
-          </div>
-
-          {/* Jemap Laundry Project Card */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Project Image */}
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/src/assets/emed.png"
-                alt="Jemap Laundry - Laundry Service Platform"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-              {/* Action Button */}
-              <a
-                href="https://emedatt-telehealth.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-teal-700 transition-all duration-200 flex items-center justify-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>View Project</span>
-              </a>
-            </div>
-
-
-          </div>
+          ))}
         </div>
-
-
       </div>
     </section>
   );
