@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExternalLink, Globe } from 'lucide-react';
 
-// Import all project images with correct paths
+// Import all project images with exact file names from assets folder
 import mtnImage from '../assets/mtn-s copy.png';
 import brandDosageImage from '../assets/bra copy.png';
 import hrHubImage from '../assets/hrhub copy.png';
@@ -73,28 +73,32 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
               {/* Project Image */}
-              <div className="relative h-64 overflow-hidden bg-gray-100">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                ) : null}
-                
-                {/* Fallback content */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center" style={{ display: 'none' }}>
-                  <div className="text-center">
-                    <Globe className="w-12 h-12 text-blue-600 mx-auto mb-2" />
-                    <p className="text-sm font-medium text-gray-700">{project.title}</p>
-                  </div>
-                </div>
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-50 to-teal-50">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center">
+                          <div class="text-center p-4">
+                            <div class="w-12 h-12 mx-auto mb-3 text-blue-600">
+                              <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                              </svg>
+                            </div>
+                            <p class="text-sm font-medium text-gray-700">${project.title}</p>
+                          </div>
+                        </div>
+                      `;
+                    }
+                  }}
+                />
               </div>
 
               {/* Project Content */}
